@@ -23,12 +23,17 @@ Soyisim=textinput("Soyisim","Soyisiminizi giriniz:")
 Mail=textinput("Mail","Mailadresinizi giriniz:")
 Şifre=textinput("Şifre","Şifre giriniz:")
 
-os.chdir("D://Yeniüye Kayıt kodu klasörü")
+
+hedef_klasor = "D://Yeniüye Kayıt kodu klasörü"
+if not os.path.exists(hedef_klasor):
+    os.makedirs(hedef_klasor)
+
+os.chdir(hedef_klasor)
 dosya = open("Kayıt Bilgi.txt","w")
-dosya.write("İsim:"+ İsim +"          ")
-dosya.write("Soyİsim:"+ Soyisim +  "\n")
-dosya.write("MailAdresi:"+ Mail +  "\n")
-dosya.write("Şifre:"+ Şifre +  "\n")
+dosya.write("İsim:"+ İsim +"          ")
+dosya.write("Soyİsim:"+ Soyisim +  "\n")
+dosya.write("MailAdresi:"+ Mail +  "\n")
+dosya.write("Şifre:"+ Şifre +  "\n")
 dosya.write("\n")
 dosya.write("\n")
 dosya.close()
